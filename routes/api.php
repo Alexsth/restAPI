@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\country\CountryController;
 use App\http\Controllers\country\Country;
-
+use App\http\Controllers\FileController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,3 +29,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     Route::apiResource('country', Country::class);
 // });
 Route::apiResource('country', Country::class);
+Route::get('file/country_list',[FileController::class,'countryList']);
+Route::post('file/country_list',[FileController::class,'countrySave']);
