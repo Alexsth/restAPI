@@ -20,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('country', 'App\Http\Controllers\Api\CountryController@country');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
