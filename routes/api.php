@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\country\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('country', [CountryController::class, 'country']);
+Route::get('country/{id}', [CountryController::class, 'countryByID']);
+Route::post('country', [CountryController::class, 'countrySave']);
+Route::put('country/{country}', [CountryController::class, 'countryUpdate']);
+Route::delete('country/{country}', [CountryController::class, 'countryDelete']);
+
