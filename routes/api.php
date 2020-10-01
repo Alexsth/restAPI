@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\country\CountryController;
+use App\http\Controllers\country\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,11 @@ use App\http\Controllers\country\CountryController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('country', [CountryController::class, 'country']);
-Route::get('country/{id}', [CountryController::class, 'countryByID']);
-Route::post('country', [CountryController::class, 'countrySave']);
-Route::put('country/{id}', [CountryController::class, 'countryUpdate']);
-Route::delete('country/{id}', [CountryController::class, 'countryDelete']);
+// Route::get('country', [CountryController::class, 'country']);
+// Route::get('country/{id}', [CountryController::class, 'countryByID']);
+// Route::post('country', [CountryController::class, 'countrySave']);
+// Route::put('country/{id}', [CountryController::class, 'countryUpdate']);
+// Route::delete('country/{id}', [CountryController::class, 'countryDelete']);
+
+Route::apiResource('country', Country::class);
 
