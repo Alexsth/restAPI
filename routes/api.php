@@ -26,4 +26,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::delete('country/{id}', [CountryController::class, 'countryDelete']);
 
 Route::apiResource('country', Country::class);
-
